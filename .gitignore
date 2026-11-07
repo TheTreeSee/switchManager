@@ -216,3 +216,17 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# --- switchManager runtime data (see PROJECT_PLAN.md): keep only the examples/ subtrees ---
+.env
+.venv/
+input/*
+!input/examples/
+output/*
+!output/examples/
+inventory/*
+!inventory/examples/
+logs/
+backup/
+*.part
+*.tmp

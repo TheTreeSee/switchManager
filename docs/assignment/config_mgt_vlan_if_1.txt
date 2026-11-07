@@ -1,0 +1,12 @@
+vlan 100
+name management
+
+int vlan100
+description management
+ip address 192.168.100.100 255.255.255.0
+no shut
+
+int fa0/23
+switchport mode access
+switchport access vlan 100
+description mgt-interface

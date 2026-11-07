@@ -1,0 +1,6 @@
+Vlan;Description;IP Address;Netmask;Switch;Ports
+1982;CD-WIFI;;;1;1-12
+1969;CD-IP-CAM;;;1;13-16
+1978;CD-Lockers;;;1;17-20
+1967;CD-Management;172.19.67.14;255.255.255.0;;
+1967,1969,1978,1982;Uplink to BST-C-Core-2;;;1;25-26

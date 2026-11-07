@@ -1,0 +1,8 @@
+Vlan;Description;IP Address;Netmask;Switch;Ports
+1982;CD-WIFI;;;1;1-12
+1969;CD-IP-CAM;;;1;13
+1970;CD-Signage;;;1;14
+1978;CD-Lockers;;;1;15-16
+1968;CD-Printers;;;1;17-18
+1973;CD-ClientsD0-1-2;;;1;19-22
+1967;CD-Management;172.19.67.13;255.255.255.0;;

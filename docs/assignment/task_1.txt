@@ -1,0 +1,38 @@
+Create a Python script that programs Cisco switches directly via SSH as a Layer 2 or Layer 3 switch.
+the script should take a ; delimited csv or multiple csvs as input (this will be in a /input/ folder)
+each csv is for only one l2 or l3 swith
+each csv will be translated to a config file (that will go to /output/)
+
+all places where multiple numbers / ranges of numbers can be put in the csv it will be with a comma separated list and allow ranges like 99-105 so a input like 1,5,9,220,1580-1590,2034 should be handled
+
+when --gen is appended it will generate the output configs using the csv's this is the default mode
+when --apply is appended to the run command it will output the csv's and apply the config to the switch otherwise it will only output the files
+when --backup is appended to the run command it will create a backup in /backup/ it is possible to only do a backup (so it will override the default and not do a --gen)
+this will host a local tftp server and download the running config of the switch
+
+for running this script on a single switch you can do py scriptname.py ipofswitch --backup
+for a apply on a single switch you can do py scriptname.py ipofswitch --apply csvname (default to ipofswitch)
+
+for batch applys you can do py scriptname.py --batch --apply (will look in input and apply each csv to its respective switch)
+
+Use the NetMiko library (https://github.com/ktbyers/netmikoLinks to an external site. / https://github.com/ktbyers/netmiko/blob/develop/EXAMPLES.mdLinks to an external site.).
+
+no important values are hardcoded they are all in a .env environment var with a example.env 
+
+The CSV header looks like this: vlan; description; ip address; subnetmask; switch; ports;
+
+Layer 3 VLAN ? => All fields are filled in.
+
+Layer 2 VLAN ? => No IP details filled in.
+
+Mgt VLAN ? => Usually no port filled in. or Descriptions contains 'management' or 'mgt'
+    Derives the default gateway from the IP details of the management vlan.
+    vlan column will be filled in with a comma separated list and allow ranges like 99-105 so a input like 1,5,9,220,1580-1590,2034 will be handled and this will be the allowed vlans for that trunk
+
+Trunk ? => Description contains 'trunk' or 'uplink'. If vlans are filled in, there is VLAN filtering.
+
+If all vlans contain IP details, activate routing on the Layer 3 switch. At the end, start your TFTP server and download the config.
+
+Try out the different scenarios !!!
+
+You need the link to your GitHub repo.

@@ -1,0 +1,25 @@
+172.19.67.10 - BST-C-Core-2 (WS-C3850-48P)
+  switch 1
+    ports 1-48     GigabitEthernet1/0/1-48
+    ports 49-52    GigabitEthernet1/1/1-4
+    ports 53-56    TenGigabitEthernet1/1/1-4
+  switch 2
+    ports 1-48     GigabitEthernet2/0/1-48
+    ports 49-52    GigabitEthernet2/1/1-4
+    ports 53-56    TenGigabitEthernet2/1/1-4
+
+172.19.67.13 - BST-D-1-242 (WS-C2960-24TT-L)
+    ports 1-24     FastEthernet0/1-24
+    ports 25-26    GigabitEthernet0/1-2
+
+172.19.67.14 - BST-D-2-118 (WS-C2960-24TT-L)
+    ports 1-24     FastEthernet0/1-24
+    ports 25-26    GigabitEthernet0/1-2
+
+10.10.10.1 - LAB-L3-CORE (WS-C3560-24PS-S)
+    ports 1-24     FastEthernet0/1-24
+    ports 25-26    GigabitEthernet0/1-2
+
+192.168.99.20 - LAB-SW-MGT (WS-C2960C-8TC-L)
+    ports 1-8      FastEthernet0/1-8
+    ports 9-10     GigabitEthernet0/1-2

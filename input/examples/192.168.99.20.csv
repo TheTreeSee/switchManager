@@ -1,0 +1,2 @@
+Vlan;Description;IP Address;Netmask;Switch;Ports
+99;MGT;192.168.99.20;255.255.255.0;;

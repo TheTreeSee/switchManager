@@ -1,0 +1,6 @@
+ip;hostname;note
+172.19.67.13;BST-D-1-242;access switch, downstream of the core - apply first
+172.19.67.14;BST-D-2-118;access switch with uplink trunk
+192.168.99.20;LAB-SW-MGT;management only
+10.10.10.1;LAB-L3-CORE;standalone layer 3
+172.19.67.10;BST-C-Core-2;2-member stack - upstream, apply last

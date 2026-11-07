@@ -1,0 +1,68 @@
+!
+! enable password encryption
+!
+service password-encryption
+
+!
+! minimum password length
+! enable secret
+!
+security passwords min-length 10
+enable secret cisco
+
+!
+! Creating users in local user database
+!
+username cisco privilege 15 secret cisco
+
+!
+! Login thru local user database for con, aux, vty
+!
+line console 0
+login local
+line vty 0 4
+login local
+line vty 5 15
+login local
+!line aux 0
+!login local
+
+!
+! disable cdp
+!
+no cdp enable
+
+!
+! Login Banner
+!
+banner motd $Unauthorized access strictly prohibited and prosecuted to the full
+extent of the law$
+
+!
+! enable ssh
+!
+ip domain-name company.com
+!
+! enable ssh on vty
+! 
+line vty 0 4
+login local
+transport input ssh
+line vty 5 15
+login local
+transport input ssh
+!
+! Erase existing key pairs on router/switch
+!
+!crypto key zeroize rsa
+!
+! Creating RSA encryption key pair on router
+!
+crypto key generate rsa general-keys modulus 2048
+!
+show ssh
+!
+! Set session time-out and retries
+!
+ip ssh time-out 90
+ip ssh authentication-retries 2
